@@ -8,13 +8,6 @@ body {
     padding: 0;
 }
 
-.container {
-    width: 90%;
-    max-width: 1000px;
-    margin: auto;
-    overflow: hidden;
-}
-
 /* ヘッダーとナビゲーション */
 header {
     background-color: #2c3e50;
@@ -24,6 +17,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
+    width: 100%; /* 幅を100%に */
 }
 
 header h1 {
@@ -31,6 +25,8 @@ header h1 {
     margin: 0;
     font-size: 2.5em;
     padding-bottom: 10px;
+    padding-left: 10px;  /* スマホ用に左右パディングを追加 */
+    padding-right: 10px;
 }
 
 header nav ul {
@@ -60,7 +56,7 @@ header nav ul li a:hover {
 
 /* メインコンテンツ */
 main {
-    width: 90%;
+    width: 95%; /* 幅を%指定に変更 */
     max-width: 1000px;
     margin: 20px auto;
 }
@@ -68,7 +64,7 @@ main {
 section {
     background-color: #ffffff;
     margin-bottom: 20px;
-    padding: 25px;
+    padding: 20px; /* パディングを少し調整 */
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
@@ -102,7 +98,7 @@ img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    background-color: #eee; /* 画像読み込み中の背景 */
+    background-color: #eee;
 }
 
 /* リスト */
@@ -121,13 +117,15 @@ code, pre {
     padding: 5px 10px;
     border-radius: 5px;
     font-family: "Courier New", Courier, monospace;
-    font-size: 1.1em;
+    font-size: 1.0em; /* 少し小さく調整 */
+    overflow-x: auto;   /* 横スクロールを許可 */
+    white-space: pre-wrap; /* 自動で折り返す */
+    word-wrap: break-word; /* 単語の途中でも折り返す */
 }
 
 pre {
     padding: 15px;
-    overflow-x: auto; /* 横スクロールを許可 */
-    white-space: pre; /* 改行とスペースを保持 */
+    white-space: pre-wrap; /* preタグも折り返すように変更 */
 }
 
 /* 質問と回答 (FAQ) */
@@ -143,7 +141,7 @@ dt {
 }
 
 dd {
-    margin-left: 20px;
+    margin-left: 10px; /*インデントを少し浅く */
     margin-bottom: 15px;
 }
 
@@ -156,19 +154,57 @@ footer {
     margin-top: 30px;
 }
 
-/* レスポンシブ対応 (簡易) */
+/* =================================== */
+/* === スマートフォン対応 (ここが重要) === */
+/* =================================== */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 2em;
+    
+    header {
+        padding: 15px 0;
+        /* ナビゲーションを固定解除 (必要な場合) */
+        /* position: static; */
     }
+
+    header h1 {
+        font-size: 1.8em; /* スマホ用にタイトルを小さく */
+    }
+
+    /* ナビゲーションのリンクを縦並びにする */
     header nav ul li {
         display: block;
         margin: 10px 0;
     }
-    section h2 {
-        font-size: 1.8em;
+
+    header nav ul li a {
+        display: block; /* リンクのクリック範囲を広げる */
+        padding: 10px;
+        background-color: rgba(255, 255, 255, 0.1);
     }
+
+    main {
+        width: 95%; /* 画面いっぱいを使う */
+        margin-top: 10px;
+    }
+
+    section {
+        padding: 15px; /* 余白を減らす */
+    }
+
+    section h2 {
+        font-size: 1.6em; /* 見出しを小さく */
+    }
+
     section h3 {
-        font-size: 1.4em;
+        font-size: 1.3em;
+    }
+
+    /* リストのインデントを調整 */
+    ul, ol {
+        padding-left: 20px;
+    }
+
+    /* コードブロックのフォントを小さく */
+    code, pre {
+        font-size: 0.9em;
     }
 }
