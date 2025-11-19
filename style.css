@@ -17,28 +17,41 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
-    width: 100%; /* 幅を100%に */
+    width: 100%;
+    /* ▼▼▼ [追加] スマホ表示用にレイアウト変更 ▼▼▼ */
+    display: flex;
+    flex-wrap: wrap; /* タイトルとメニューが重ならないように */
+    justify-content: space-between; /* タイトルとボタンを両端に */
+    align-items: center;
+    padding: 20px 5%; /* 左右に余白を設定 */
+    box-sizing: border-box; /* パディングを含めて幅100%にする */
+    position: relative; /* メニューの表示位置の基準点にする */
 }
 
 header h1 {
-    text-align: center;
+    text-align: left; /* 左揃えに変更 */
     margin: 0;
-    font-size: 2.5em;
-    padding-bottom: 10px;
-    padding-left: 10px;  /* スマホ用に左右パディングを追加 */
-    padding-right: 10px;
+    font-size: 2.2em; /* 少し調整 */
+    /* パディングを削除 (header側で設定) */
 }
 
+/* PC用のナビゲーションスタイル */
+header nav {
+    width: 100%; /* PCでは幅いっぱい */
+}
 header nav ul {
     padding: 0;
-    margin: 0;
+    margin: 10px 0 0 0; /* タイトルの下に配置 */
     list-style: none;
     text-align: center;
+    display: flex; /* 横並び */
+    flex-wrap: wrap; /* 折り返し許可 */
+    justify-content: center;
 }
 
 header nav ul li {
     display: inline-block;
-    margin: 0 10px;
+    margin: 5px 10px;
 }
 
 header nav ul li a {
@@ -54,13 +67,43 @@ header nav ul li a:hover {
     background-color: #3498db;
 }
 
+/* ▼▼▼ [追加] ハンバーガーメニューボタンのスタイル ▼▼▼ */
+.menu-toggle {
+    display: none; /* PCでは非表示 */
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 10px; /* 右端に少し余白 */
+}
+
+.menu-toggle span {
+    height: 3px;
+    width: 25px;
+    background: #ecf0f1;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+/* ハンバーガーボタンが active になった時 (×印) */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* (メインコンテンツ、フッターなどは変更なし) */
+/* ... (中略) ... */
+
 /* メインコンテンツ */
 main {
     width: 95%; /* 幅を%指定に変更 */
     max-width: 1000px;
     margin: 20px auto;
 }
-
+/* (中略：section, h2, h3, h4, img, ul, ol, li, code, pre, dl, dt, dd のスタイルは変更なし) */
 section {
     background-color: #ffffff;
     margin-bottom: 20px;
@@ -68,82 +111,17 @@ section {
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-
-/* 見出し */
-section h2 {
-    color: #2c3e50;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 10px;
-    font-size: 2em;
-}
-
-section h3 {
-    color: #34495e;
-    font-size: 1.6em;
-    margin-top: 25px;
-}
-
-section h4 {
-    color: #7f8c8d;
-    font-size: 1.3em;
-}
-
-/* 画像 */
-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #eee;
-}
-
-/* リスト */
-ul, ol {
-    padding-left: 30px;
-}
-
-li {
-    margin-bottom: 10px;
-}
-
-/* コードブロック */
-code, pre {
-    background-color: #ecf0f1;
-    color: #2c3e50;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-family: "Courier New", Courier, monospace;
-    font-size: 1.0em; /* 少し小さく調整 */
-    overflow-x: auto;   /* 横スクロールを許可 */
-    white-space: pre-wrap; /* 自動で折り返す */
-    word-wrap: break-word; /* 単語の途中でも折り返す */
-}
-
-pre {
-    padding: 15px;
-    white-space: pre-wrap; /* preタグも折り返すように変更 */
-}
-
-/* 質問と回答 (FAQ) */
-dl {
-    margin-top: 20px;
-}
-
-dt {
-    font-weight: bold;
-    color: #3498db;
-    font-size: 1.2em;
-    margin-top: 15px;
-}
-
-dd {
-    margin-left: 10px; /*インデントを少し浅く */
-    margin-bottom: 15px;
-}
+section h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; font-size: 2em; }
+section h3 { color: #34495e; font-size: 1.6em; margin-top: 25px; }
+section h4 { color: #7f8c8d; font-size: 1.3em; }
+img { max-width: 100%; height: auto; border-radius: 5px; margin-top: 10px; margin-bottom: 10px; display: block; margin-left: auto; margin-right: auto; background-color: #eee; }
+ul, ol { padding-left: 30px; }
+li { margin-bottom: 10px; }
+code, pre { background-color: #ecf0f1; color: #2c3e50; padding: 5px 10px; border-radius: 5px; font-family: "Courier New", Courier, monospace; font-size: 1.0em; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word; }
+pre { padding: 15px; white-space: pre-wrap; }
+dl { margin-top: 20px; }
+dt { font-weight: bold; color: #3498db; font-size: 1.2em; margin-top: 15px; }
+dd { margin-left: 10px; margin-bottom: 15px; }
 
 /* フッター */
 footer {
@@ -160,50 +138,77 @@ footer {
 @media (max-width: 768px) {
     
     header {
-        padding: 15px 0;
-        /* ナビゲーションを固定解除 (必要な場合) */
-        /* position: static; */
+        padding: 15px 5%; /* スマホ用のヘッダー余白 */
     }
 
     header h1 {
-        font-size: 1.8em; /* スマホ用にタイトルを小さく */
+        font-size: 1.5em; /* スマホ用にタイトルを小さく */
+        text-align: left;
     }
 
-    /* ナビゲーションのリンクを縦並びにする */
+    /* ▼▼▼ [修正] ハンバーガーボタンを表示 ▼▼▼ */
+    .menu-toggle {
+        display: flex; /* スマホでは表示 */
+    }
+
+    /* ▼▼▼ [修正] ナビゲーションメニューのスタイル ▼▼▼ */
+    header nav {
+        width: 100%;
+    }
+    
+    header nav ul {
+        display: none; /* ★デフォルトは非表示 */
+        flex-direction: column; /* 縦並びにする */
+        width: 100%;
+        position: absolute; /* ヘッダーの下に重ねる */
+        top: 100%; /* ヘッダーのすぐ下 */
+        left: 0;
+        background-color: #34495e; /* メニューの背景色 */
+        padding: 10px 0;
+        margin: 0;
+    }
+
+    /* ▼▼▼ [追加] JSで 'show' クラスが付いたら表示 ▼▼▼ */
+    header nav ul.show {
+        display: flex; /* ★表示する */
+    }
+
     header nav ul li {
         display: block;
-        margin: 10px 0;
+        margin: 0;
+        width: 100%;
+        text-align: center;
     }
 
     header nav ul li a {
         display: block; /* リンクのクリック範囲を広げる */
-        padding: 10px;
-        background-color: rgba(255, 255, 255, 0.1);
+        padding: 15px;
+        width: 100%;
+        box-sizing: border-box; /* パディングを含めて幅100% */
+        border-bottom: 1px solid #4a627a; /* 区切り線 */
+    }
+    header nav ul li a:hover {
+        background-color: #3498db;
     }
 
+
+    /* (以下のメインコンテンツのスタイルは変更なし) */
     main {
         width: 95%; /* 画面いっぱいを使う */
         margin-top: 10px;
     }
-
     section {
         padding: 15px; /* 余白を減らす */
     }
-
     section h2 {
         font-size: 1.6em; /* 見出しを小さく */
     }
-
     section h3 {
         font-size: 1.3em;
     }
-
-    /* リストのインデントを調整 */
     ul, ol {
         padding-left: 20px;
     }
-
-    /* コードブロックのフォントを小さく */
     code, pre {
         font-size: 0.9em;
     }
