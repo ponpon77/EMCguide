@@ -3,16 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EarthMC チュートリアル</title>
+    <title>EarthMC 総合チュートリアル</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="assets/icon.png" type="image/x-icon"> 
 </head>
 <body>
 
     <header>
-        <h1>EarthMC チュートリアルサイト</h1>
-        <nav>
-            <ul>
+        <h1>EarthMC 総合チュートリアルサイト</h1>
+        
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <nav id="navbar">
+            <ul id="nav-links">
                 <li><a href="#section1">🔰 最初にすべきこと</a></li>
                 <li><a href="#section2">💰 金の集め方</a></li>
                 <li><a href="#section3">🏪 ショップ</a></li>
@@ -73,7 +79,7 @@
                 <li><strong>透明ポーション</strong>（安全のため）</li>
                 <li>採掘IIポーション (Haste II potion)</li>
             </ul>
-            <img src="assets/4_1_1_Minecraft__1.18.2_-__2022_10_16_16_19_46.png.YmhQi-3PyW.png" alt="採掘装備">
+            <img src="assets/4_1_1_Minecraft__1.18.2_-__2022_10_16_16_19_46.png.YmhQi-3PyW.jpg" alt="採掘装備">
             <p><strong>掘り方:</strong></p>
             <ol>
                 <li>領土外（荒野）に出ます。</li>
@@ -106,14 +112,14 @@
             <img src="assets/15_1_1_Polish_20220108_195452024-1-1-1.jpg.0PpL19WVwy.jpg" alt="ショップについて">
             
             <h3>看板の見方</h3>
-            <img src="assets/13_1_1_Polish_20221016_171156628.png.Xh8lFEu8-n.png" alt="ショップ看板の見方">
+            <img src="assets/13_1_1_Polish_20221016_171156628.png.Xh8lFEu8-n.jpg" alt="ショップ看板の見方">
             <ol>
                 <li><strong>売ってる人の名前</strong>（売り切れの場合は赤色になります）</li>
                 <li><strong>Selling (販売)</strong> か <strong>Buying (買取)</strong> か</li>
                 <li><strong>売っている物</strong></li>
                 <li><strong>価格</strong>（例: 64個の石を1Gで販売）</li>
             </ol>
-            <img src="assets/12_1_1_Polish_20221016_172725874.png.58I5LEMgfC.png" alt="売り切れの看板">
+            <img src="assets/12_1_1_Polish_20221016_172725874.png.58I5LEMgfC.jpg" alt="売り切れの看板">
 
             <h3>✅ アイテムの買い方</h3>
             <img src="assets/11_1_1_Polish_20220109_145525119-1-1-1.jpg.KmrAWBbZrF.jpg" alt="ショップの買い方">
@@ -297,6 +303,18 @@
     <footer>
         <p>&copy; 2025 EarthMC チュートリアル (非公式)</p>
     </footer>
+
+    <script>
+        const menuToggle = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            // 'show' クラスを付けたり外したりする
+            navLinks.classList.toggle('show');
+            // ボタン自体にも 'active' クラスを付けて、×印などに変える（CSSで設定）
+            menuToggle.classList.toggle('active');
+        });
+    </script>
 
 </body>
 </html>
