@@ -18,34 +18,63 @@ header {
     top: 0;
     z-index: 100;
     width: 100%;
-    /* ▼▼▼ [追加] スマホ表示用にレイアウト変更 ▼▼▼ */
     display: flex;
-    flex-wrap: wrap; /* タイトルとメニューが重ならないように */
-    justify-content: space-between; /* タイトルとボタンを両端に */
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
-    padding: 20px 5%; /* 左右に余白を設定 */
-    box-sizing: border-box; /* パディングを含めて幅100%にする */
-    position: relative; /* メニューの表示位置の基準点にする */
+    padding: 20px 5%;
+    box-sizing: border-box;
+    position: relative;
 }
 
 header h1 {
-    text-align: left; /* 左揃えに変更 */
+    text-align: left;
     margin: 0;
-    font-size: 2.2em; /* 少し調整 */
-    /* パディングを削除 (header側で設定) */
+    font-size: 2.2em;
+}
+
+/* 言語切り替えボタン */
+.language-switcher {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    order: 2;
+}
+
+.lang-btn {
+    padding: 8px 15px;
+    background-color: #34495e;
+    color: #ecf0f1;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 0.9em;
+}
+
+.lang-btn:hover {
+    background-color: #3498db;
+    transform: translateY(-2px);
+}
+
+.lang-btn.active {
+    background-color: #3498db;
+    box-shadow: 0 2px 5px rgba(52, 152, 219, 0.5);
 }
 
 /* PC用のナビゲーションスタイル */
 header nav {
-    width: 100%; /* PCでは幅いっぱい */
+    width: 100%;
+    order: 3;
 }
+
 header nav ul {
     padding: 0;
-    margin: 10px 0 0 0; /* タイトルの下に配置 */
+    margin: 10px 0 0 0;
     list-style: none;
     text-align: center;
-    display: flex; /* 横並び */
-    flex-wrap: wrap; /* 折り返し許可 */
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
@@ -67,12 +96,13 @@ header nav ul li a:hover {
     background-color: #3498db;
 }
 
-/* ▼▼▼ [追加] ハンバーガーメニューボタンのスタイル ▼▼▼ */
+/* ハンバーガーメニューボタンのスタイル */
 .menu-toggle {
-    display: none; /* PCでは非表示 */
+    display: none;
     flex-direction: column;
     cursor: pointer;
-    margin-right: 10px; /* 右端に少し余白 */
+    margin-right: 10px;
+    order: 1;
 }
 
 .menu-toggle span {
@@ -83,45 +113,104 @@ header nav ul li a:hover {
     border-radius: 3px;
     transition: all 0.3s ease;
 }
-/* ハンバーガーボタンが active になった時 (×印) */
+
 .menu-toggle.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
 }
+
 .menu-toggle.active span:nth-child(2) {
     opacity: 0;
 }
+
 .menu-toggle.active span:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -6px);
 }
 
-/* (メインコンテンツ、フッターなどは変更なし) */
-/* ... (中略) ... */
-
 /* メインコンテンツ */
 main {
-    width: 95%; /* 幅を%指定に変更 */
+    width: 95%;
     max-width: 1000px;
     margin: 20px auto;
 }
-/* (中略：section, h2, h3, h4, img, ul, ol, li, code, pre, dl, dt, dd のスタイルは変更なし) */
+
 section {
     background-color: #ffffff;
     margin-bottom: 20px;
-    padding: 20px; /* パディングを少し調整 */
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-section h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; font-size: 2em; }
-section h3 { color: #34495e; font-size: 1.6em; margin-top: 25px; }
-section h4 { color: #7f8c8d; font-size: 1.3em; }
-img { max-width: 100%; height: auto; border-radius: 5px; margin-top: 10px; margin-bottom: 10px; display: block; margin-left: auto; margin-right: auto; background-color: #eee; }
-ul, ol { padding-left: 30px; }
-li { margin-bottom: 10px; }
-code, pre { background-color: #ecf0f1; color: #2c3e50; padding: 5px 10px; border-radius: 5px; font-family: "Courier New", Courier, monospace; font-size: 1.0em; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word; }
-pre { padding: 15px; white-space: pre-wrap; }
-dl { margin-top: 20px; }
-dt { font-weight: bold; color: #3498db; font-size: 1.2em; margin-top: 15px; }
-dd { margin-left: 10px; margin-bottom: 15px; }
+
+section h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+    font-size: 2em;
+}
+
+section h3 {
+    color: #34495e;
+    font-size: 1.6em;
+    margin-top: 25px;
+}
+
+section h4 {
+    color: #7f8c8d;
+    font-size: 1.3em;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #eee;
+}
+
+ul, ol {
+    padding-left: 30px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+code, pre {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1.0em;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+pre {
+    padding: 15px;
+    white-space: pre-wrap;
+}
+
+dl {
+    margin-top: 20px;
+}
+
+dt {
+    font-weight: bold;
+    color: #3498db;
+    font-size: 1.2em;
+    margin-top: 15px;
+}
+
+dd {
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
 
 /* フッター */
 footer {
@@ -132,45 +221,64 @@ footer {
     margin-top: 30px;
 }
 
-/* =================================== */
-/* === スマートフォン対応 (ここが重要) === */
-/* =================================== */
+/* スマートフォン対応 */
 @media (max-width: 768px) {
     
     header {
-        padding: 15px 5%; /* スマホ用のヘッダー余白 */
+        padding: 15px 5%;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     header h1 {
-        font-size: 1.5em; /* スマホ用にタイトルを小さく */
+        font-size: 1.5em;
         text-align: left;
+        width: 100%;
+        order: 1;
     }
 
-    /* ▼▼▼ [修正] ハンバーガーボタンを表示 ▼▼▼ */
+    /* 言語切り替えボタン - スマホ表示 */
+    .language-switcher {
+        order: 2;
+        margin-top: 10px;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .lang-btn {
+        font-size: 0.85em;
+        padding: 6px 12px;
+    }
+
+    /* ハンバーガーボタンを表示 */
     .menu-toggle {
-        display: flex; /* スマホでは表示 */
+        display: flex;
+        position: absolute;
+        top: 20px;
+        right: 5%;
     }
 
-    /* ▼▼▼ [修正] ナビゲーションメニューのスタイル ▼▼▼ */
+    /* ナビゲーションメニューのスタイル */
     header nav {
         width: 100%;
+        order: 3;
     }
     
     header nav ul {
-        display: none; /* ★デフォルトは非表示 */
-        flex-direction: column; /* 縦並びにする */
+        display: none;
+        flex-direction: column;
         width: 100%;
-        position: absolute; /* ヘッダーの下に重ねる */
-        top: 100%; /* ヘッダーのすぐ下 */
+        position: absolute;
+        top: 100%;
         left: 0;
-        background-color: #34495e; /* メニューの背景色 */
+        background-color: #34495e;
         padding: 10px 0;
         margin: 0;
     }
 
-    /* ▼▼▼ [追加] JSで 'show' クラスが付いたら表示 ▼▼▼ */
+    /* JSで 'show' クラスが付いたら表示 */
     header nav ul.show {
-        display: flex; /* ★表示する */
+        display: flex;
     }
 
     header nav ul li {
@@ -181,34 +289,38 @@ footer {
     }
 
     header nav ul li a {
-        display: block; /* リンクのクリック範囲を広げる */
+        display: block;
         padding: 15px;
         width: 100%;
-        box-sizing: border-box; /* パディングを含めて幅100% */
-        border-bottom: 1px solid #4a627a; /* 区切り線 */
+        box-sizing: border-box;
+        border-bottom: 1px solid #4a627a;
     }
+
     header nav ul li a:hover {
         background-color: #3498db;
     }
 
-
-    /* (以下のメインコンテンツのスタイルは変更なし) */
     main {
-        width: 95%; /* 画面いっぱいを使う */
+        width: 95%;
         margin-top: 10px;
     }
+
     section {
-        padding: 15px; /* 余白を減らす */
+        padding: 15px;
     }
+
     section h2 {
-        font-size: 1.6em; /* 見出しを小さく */
+        font-size: 1.6em;
     }
+
     section h3 {
         font-size: 1.3em;
     }
+
     ul, ol {
         padding-left: 20px;
     }
+
     code, pre {
         font-size: 0.9em;
     }
