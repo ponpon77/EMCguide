@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,34 +8,35 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="/assets/icon.png">
 </head>
+
 <body>
 
     <header>
         <h1>EarthMC チュートリアル</h1>
-        
+
         <div class="language-switcher">
             <a href="index.html" class="lang-btn active">🇯🇵 日本語</a>
             <a href="en/index.html" class="lang-btn">🇬🇧 English</a>
         </div>
-        
+
         <div class="menu-toggle" id="mobile-menu">
             <span></span>
             <span></span>
             <span></span>
         </div>
-        
+
         <nav id="navbar">
             <ul id="nav-links">
-                <li><a href="#section1">🔰 最初にすべきこと</a></li>
-                <li><a href="#section2">💰 金の集め方</a></li>
-                <li><a href="#section3">🏪 ショップ</a></li>
+                <li><a href="#section1">🔰 最初に</a></li>
+                <li><a href="#section2">💰 金策</a></li>
+                <li><a href="#section3">🏪 店</a></li>
                 <li><a href="#section4">🚫 ルール</a></li>
-                <li><a href="#section5">😼 危険と対策</a></li>
+                <li><a href="#section5">😼 危険</a></li>
                 <li><a href="#section6">💻 コマンド</a></li>
                 <li><a href="#section7">🤔 FAQ</a></li>
                 <li><a href="#section8">🖱️ クライアント</a></li>
-                <li><a href="#section9">🥱 やり込み要素</a></li>
-                <li><a href="#section10">👑 上級者向け</a></li>
+                <li><a href="#section9">🥱 やり込み</a></li>
+                <li><a href="#section10">👑 上級者</a></li>
             </ul>
         </nav>
     </header>
@@ -72,11 +74,11 @@
         <section id="section2">
             <h2>💰 お金(金)の集め方</h2>
             <img src="assets/10_1_1_Polish_20220101_215336131-1-1-2.jpg.-IBcjCqQF5.jpg" alt="金を集めよう">
-            
+
             <h3>① 掘る</h3>
             <img src="assets/9_1_1_Polish_20220102_224048367-1-1.jpg.pFz0KsI9ng.jpg" alt="掘る">
             <p>最も基本的な金策です。領土外(荒野)で金を掘りますが、PK(プレイヤーキル)のリスクがあるため、<strong>透明ポーション</strong>の使用を推奨します。</p>
-            
+
             <h4>⛏️ 金の掘り方(詳細)</h4>
             <p><strong>必要な物:</strong></p>
             <ul>
@@ -85,7 +87,7 @@
                 <li><strong>透明ポーション</strong>(安全のため)</li>
                 <li>採掘IIポーション (Haste II potion)</li>
             </ul>
-            <img src="assets/4_1_1_Minecraft__1.18.2_-__2022_10_16_16_19_46.png.YmhQi-3PyW.jpg" alt="採掘装備">
+            <img src="assets/4_1_1_Minecraft__1.18.2_-__2022_10_16_16_19_46.png.YmhQi-3PyW.png" alt="採掘装備">
             <p><strong>掘り方:</strong></p>
             <ol>
                 <li>領土外(荒野)に出ます。</li>
@@ -116,16 +118,16 @@
         <section id="section3">
             <h2>🏪 ショップの使い方</h2>
             <img src="assets/15_1_1_Polish_20220108_195452024-1-1-1.jpg.0PpL19WVwy.jpg" alt="ショップについて">
-            
+
             <h3>看板の見方</h3>
-            <img src="assets/13_1_1_Polish_20221016_171156628.png.Xh8lFEu8-n.jpg" alt="ショップ看板の見方">
+            <img src="assets/13_1_1_Polish_20221016_171156628.png.Xh8lFEu8-n.png" alt="ショップ看板の見方">
             <ol>
                 <li><strong>売ってる人の名前</strong>(売り切れの場合は赤色になります)</li>
                 <li><strong>Selling (販売)</strong> か <strong>Buying (買取)</strong> か</li>
                 <li><strong>売っている物</strong></li>
                 <li><strong>価格</strong>(例: 64個の石を1Gで販売)</li>
             </ol>
-            <img src="assets/12_1_1_Polish_20221016_172725874.png.58I5LEMgfC.jpg" alt="売り切れの看板">
+            <img src="assets/12_1_1_Polish_20221016_172725874.png.58I5LEMgfC.png" alt="売り切れの看板">
 
             <h3>✅ アイテムの買い方</h3>
             <img src="assets/11_1_1_Polish_20220109_145525119-1-1-1.jpg.KmrAWBbZrF.jpg" alt="ショップの買い方">
@@ -133,4 +135,170 @@
                 <li>買いたいショップの看板(またはチェスト)を<strong>左クリック</strong>します。</li>
                 <li>チャット欄に情報("Shop Information")が表示されます。</li>
                 <img src="assets/10_1_1_Polish_20221016_173643848.png.LHC9WgfqGo.png" alt="ショップ情報">
-                <li>チャット欄に
+                <li>チャット欄に買いたい個数を入力します(例: <code>1</code>)。</li>
+                <li>「Successfully purchased」と表示されれば購入完了です。</li>
+            </ol>
+
+            <h3>🔵 ショップの作り方</h3>
+            <ol>
+                <li>市長に言って、土地をSHOPチャンクに設定してもらいます。</li>
+                <li>チェストを置き、売りたいアイテムを持ってチェストを左クリックします。</li>
+                <li>チャットに「Enter in chat, how much...」と表示されます。</li>
+                <li>チャット欄に<strong>販売価格</strong>を入力します。</li>
+                <li>チェストの中にアイテムを入れれば販売開始です。</li>
+            </ol>
+        </section>
+
+        <section id="section4">
+            <h2>🚫 ルール</h2>
+            <p>サーバーで楽しく過ごすために、ルールを守りましょう。</p>
+            <ul>
+                <li><strong>チート:</strong> チートクライアント、マクロ、AFK自動キック回避などは禁止です。</li>
+                <li><strong>アカウント:</strong> サブアカウント(複垢)は禁止です。</li>
+                <li><strong>チャット:</strong> スパム、暴言、ヘイトスピーチ、個人情報の拡散は禁止です。</li>
+                <li><strong>グローバルチャット:</strong> <code>/global</code> は<strong>英語のみ</strong>です。日本語は
+                    <code>/Japanese</code> を使いましょう。
+                </li>
+                <li><strong>RMT:</strong> ゲーム内アイテムやサービスを現実のお金で売買することは禁止です。</li>
+                <li><strong>荒らし:</strong> 他人の保護(土地)やその周辺を破壊する行為は禁止です。</li>
+                <li><strong>地形:</strong> 自然の地形を大きく損なう行為(大規模な整地など)は禁止です。</li>
+            </ul>
+        </section>
+
+        <section id="section5">
+            <h2>😼 危険と対策</h2>
+            <p>EMCには多くの危険があります。自分の身は自分で守りましょう。</p>
+
+            <h3>危険その1: アイテムロスト</h3>
+            <p>死ぬとアイテムをばら撒き、他人に拾われる可能性があります。</p>
+            <p><strong>対策:</strong> 大事なものは<strong>エンダーチェスト</strong>に入れましょう。中身は自分にしか見えません。</p>
+
+            <h3>危険その2: 荒野でのPK</h3>
+            <p>どこの国にも属さない土地(荒野)では、PVP(攻撃)が可能です。マップで位置がバレるため、狙われやすいです。</p>
+            <p><strong>対策:</strong></p>
+            <ul>
+                <li>むやみに荒野に出ない(移動は <code>/n spawn</code> を使う)。</li>
+                <li>荒野に行くときは大事なものを持たない。</li>
+                <li><strong>透明ポーションを飲む</strong>(マップに映らなくなります)。</li>
+            </ul>
+
+            <h3>危険その3: 安全地帯での詐欺・罠</h3>
+            <p>「こっち来て」などのチャット(tell)で荒野に誘い出されたり、PVPエリアで殺されたりすることがあります。</p>
+            <p><strong>対策:</strong> 知らない人や外国人の甘い言葉には乗らないようにしましょう。</p>
+        </section>
+
+        <section id="section6">
+            <h2>💻 よく使うコマンド</h2>
+            <h3>基本コマンド</h3>
+            <pre>
+/n spawn [国名] : 指定した国にワープ
+/n spawn : 自分の国にワープ
+/t spawn : 自分の町にワープ
+/tell [名前] [内容] : 個人メッセージを送る
+/r [内容] : 最後にきたtellに返信する
+/vote : 投票リンクを表示
+</pre>
+            <h3>チャット関連</h3>
+            <pre>
+/tc : 町チャット (Town Chat)
+/nc : 国チャット (Nation Chat)
+/global : グローバルチャット (英語のみ)
+/Japanese : 日本語チャット
+</pre>
+            <h3>便利なリンク</h3>
+            <ul>
+                <li>公式サイト: <code>https://earthmc.net/</code></li>
+                <li>マップ: <code>https://earthmc.net/map/</code></li>
+                <li>コマンド一覧: <code>https://earthmc.fandom.com/wiki/Commands</code></li>
+            </ul>
+        </section>
+
+        <section id="section7">
+            <h2>🤔 FAQ (よくある質問)</h2>
+            <dl>
+                <dt>Q: 英語が全くわかりません！</dt>
+                <dd>A: 翻訳ツール(DeepLなど)を使いましょう。PCOTなどの画面翻訳ツールも便利です。</dd>
+
+                <dt>Q: ●●(アイテム)はどこで買えますか？相場は？</dt>
+                <dd>A: YamatoやMaliなどの大型ショップで大抵のものは売っています。そこで価格を確認しましょう。</dd>
+
+                <dt>Q: 殺されてアイテムを失いました。</dt>
+                <dd>A: 基本的に自己責任です。諦めて「危険と対策」のページを読み、次から気をつけましょう。</dd>
+
+                <dt>Q: VPって何ですか？チャットでbruhって見ました！</dt>
+                <dd>A: <strong>Vote
+                        Party</strong>の略です。サーバー全体の投票数が一定数(5000など)に達すると、オンラインの全員にクレート(景品箱)が配られます。<code>/vp</code>
+                    で残りの投票数を確認できます。</dd>
+
+                <dt>Q: 町に閉じ込められました！出られません！</dt>
+                <dd>A: <code>/t spawn</code> や <code>/n spawn</code> を試してください。それでもダメならDiscordでチケットを切ってスタッフに助けを求めましょう。
+                </dd>
+            </dl>
+        </section>
+
+        <section id="section8">
+            <h2>🖱️ おすすめクライアント</h2>
+            <p>クライアントとは、便利なMOD(機能)が詰め合わせになったものです。</p>
+
+            <h3>1. BADLION client</h3>
+            <p><strong>おすすめ度: ⭐⭐⭐</strong><br>特徴: MODの数が多く、UIが見やすい。暗視MOD(Fullbright)などが最初から入っています。</p>
+
+            <h3>2. Lunar client</h3>
+            <p><strong>おすすめ度: ⭐⭐⭐⭐</strong><br>特徴: 非常に軽量で、FPSが出やすいです。PCが重い人におすすめ。Fullbright入り。</p>
+
+            <h3>3. feather client</h3>
+            <p><strong>おすすめ度: ⭐⭐⭐⭐⭐</strong><br>特徴: 軽量かつシンプル。最大の特徴は、自分で外部MODを入れられることです。</p>
+        </section>
+
+        <section id="section9">
+            <h2>🥱 やり込み要素 (暇な人向け)</h2>
+            <p>EMCに慣れてきて、やることがなくなったら以下のようなことに挑戦してみましょう。</p>
+            <ul>
+                <li>ショップ経営</li>
+                <li>廃墟漁り (レイド)</li>
+                <li>世界旅行 (<code>/n spawn</code> で同盟国を巡る)</li>
+                <li>MCMMOのレベル上げ</li>
+                <li>PVP (アリーナや荒野で戦う)</li>
+                <li>建築 (マップアート作成など)</li>
+            </ul>
+        </section>
+
+        <section id="section10">
+            <h2>👑 上級者向け</h2>
+            <h3>🤴 市長・国王向け</h3>
+            <p><strong>町の作り方:</strong> <code>/t create [町名]</code> で町を作れます(64G必要)。</p>
+            <p><strong>権限設定(重要):</strong></p>
+            <ul>
+                <li>権限設定を間違えると、町のアイテムを盗まれたりします。</li>
+                <li>町を作ったら、まずは <code>/t perm off</code> で全ての権限をオフにしましょう。</li>
+                <li>権限は4種類(建築・破壊・スイッチ・アイテム)と5段階(友人・住民・国民・同盟・部外者)で設定します。</li>
+            </ul>
+
+            <h3>💎 プレミアム(課金)について</h3>
+            <p>月額料金(約1000円〜)を払うことで、様々な特典が得られる制度です。</p>
+            <p><strong>主な特典:</strong></p>
+            <ul>
+                <li>優先キュー (サーバーに早く入れる)</li>
+                <li>パーティー作成 (MCMMOのレベル上げに便利)</li>
+                <li>エンダーチェストの容量2倍</li>
+                <li><code>/nickname</code> の使用</li>
+            </ul>
+            <p><strong>購入方法:</strong></p>
+            <ol>
+                <li>「EarthMC Premium」で検索し、公式サイトに行きます。</li>
+                <li>「Go to store」をクリックします。</li>
+                <li>期間を選び、自分のMCIDを入力します。</li>
+                <li>名前、住所、メールアドレスなどを入力します。</li>
+                <li>支払い方法(VISAカードやPayPal)を選び、決済します。</li>
+            </ol>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 EarthMC Guide - CC0 1.0 Universal</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
